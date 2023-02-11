@@ -1,27 +1,29 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import s from "./NavBar.module.css";
 
 export default function NavBar() {
   const router = useRouter();
   return (
-    <nav className={s.nav}>
-      <Link
-        style={{ color: router.pathname === "/" ? "forestgreen" : "lavender" }}
-        href="/"
-      >
-        Home
+    <nav>
+      {/* style 직접 적용해야 함 */}
+      <Link href="/" style={{ textDecoration: "none" }}>
+        <text className={router.pathname === "/" ? "active" : ""}>Home</text>
       </Link>
-      <Link
-        // module.css 두 css 합쳐서 쓰기
-        // className={`${s.link} ${router.pathname === "/about" ? s.active : ""}`}
-        className={[s.link, router.pathname === "/about" ? s.active : ""].join(
-          " "
-        )}
-        href="/about"
-      >
-        About
+      <Link href="/about" style={{ textDecoration: "none" }}>
+        <text className={router.pathname === "/about" ? "active" : ""}>
+          About
+        </text>
       </Link>
+      {/* style jsx로는 Link태그에 className을 넣거나 Link 태그 그대로 사용해도 style 적용 안 됨 */}
+      <style jsx>{`
+        nav {
+          background-color: tomato;
+        }
+
+        .active {
+          color: yellow;
+        }
+      `}</style>
     </nav>
   );
 }
