@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  background-color: cornflowerblue;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.active {
+  color: darksalmon;
+}
