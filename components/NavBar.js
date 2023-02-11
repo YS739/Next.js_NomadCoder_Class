@@ -17,7 +17,7 @@ export default function NavBar() {
       {/* style jsx로는 Link태그에 className을 넣거나 Link 태그 그대로 사용해도 style 적용 안 됨 */}
       <style jsx>{`
         nav {
-          background-color: tomato;
+          background-color: lavender;
         }
 
         .active {
