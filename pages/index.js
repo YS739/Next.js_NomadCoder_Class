@@ -6,16 +6,7 @@ import { useEffect, useState } from "react";
 export default function Home({ results }) {
   const router = useRouter();
   const onClick = (id, title) => {
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          title,
-        },
-      },
-      // url에 어떤 정보를 보여줄 지 정할 수 있다.
-      `/movies/${id}`
-    );
+    router.push(`/movies/${title}/${id}`);
   };
   return (
     <div className="container">
