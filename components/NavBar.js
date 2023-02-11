@@ -19,10 +19,6 @@ export default function NavBar() {
         nav {
           background-color: lavender;
         }
-
-        .active {
-          color: yellow;
-        }
       `}</style>
     </nav>
   );
